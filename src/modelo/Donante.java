@@ -2,21 +2,12 @@ package modelo;
 
 import java.util.Objects;
 
-/**
- * Entidad de dominio relacionada que representa la persona natural o juridica
- * benefactora que financia o provee los recursos de donacion.
- * 
- * Asignatura: Estructuras de Datos - Unidad 3
- * IES: Universidad de Cartagena
- * Tutor: John Carlos Arrieta Arrieta
- * Estudiante: Cristian Torres
- */
 public class Donante {
-    private String idDonante;      // Identificador unico (Cedula o NIT)
-    private String nombre;         // Nombre completo o razon social
-    private String email;          // Correo electronico para control de unicidad
-    private String telefono;       // Telefono de contacto
-    private String tipoDonante;    // "INDIVIDUAL" o "EMPRESARIAL"
+    private String idDonante;
+    private String nombre;
+    private String email;
+    private String telefono;
+    private String tipoDonante;
 
     public Donante() {
     }

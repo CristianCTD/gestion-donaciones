@@ -2,27 +2,16 @@ package modelo;
 
 import java.util.Objects;
 
-/**
- * Entidad principal del Caso 30: Solicitud de Ayuda / Donacion.
- * Implementa Comparable para ordenamiento natural (utilizado por TreeSet)
- * y sobrescribe equals() y hashCode() basados en idSolicitud para garantizar
- * la correcta operacion en HashSet, HashMap y colecciones del Java Collections Framework.
- * 
- * Asignatura: Estructuras de Datos - Unidad 3
- * IES: Universidad de Cartagena
- * Tutor: John Carlos Arrieta Arrieta
- * Estudiante: Cristian Torres
- */
 public class SolicitudAyuda implements Comparable<SolicitudAyuda> {
-    private String idSolicitud;        // Identificador unico (ej. "SOL-101")
-    private Donante donante;           // Relacion con la clase Donante
-    private String beneficiario;       // Nombre de la comunidad, institucion o persona atendida
-    private String tipoRecurso;        // Categoria (ej. "Alimentos", "Medicamentos", "Ropa", etc.)
-    private int cantidad;              // Cantidad de raciones, unidades o kits
-    private PrioridadEnum prioridad;   // Nivel de urgencia (URGENTE, ALTA, MEDIA, BAJA)
-    private String fechaSolicitud;     // Fecha en formato yyyy-MM-dd
-    private String estado;             // "REGISTRADA", "EN_PROCESO", "ATENDIDA", "CANCELADA"
-    private String descripcion;        // Detalle de la necesidad
+    private String idSolicitud;
+    private Donante donante;
+    private String beneficiario;
+    private String tipoRecurso;
+    private int cantidad;
+    private PrioridadEnum prioridad;
+    private String fechaSolicitud;
+    private String estado;
+    private String descripcion;
 
     public SolicitudAyuda() {
     }
@@ -113,9 +102,6 @@ public class SolicitudAyuda implements Comparable<SolicitudAyuda> {
         this.descripcion = descripcion;
     }
 
-    /**
-     * Regla estricta: equals() basado en el identificador unico idSolicitud
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -124,17 +110,11 @@ public class SolicitudAyuda implements Comparable<SolicitudAyuda> {
         return Objects.equals(idSolicitud, that.idSolicitud);
     }
 
-    /**
-     * Consistencia obligatoria con equals(): mismo idSolicitud produce mismo hash
-     */
     @Override
     public int hashCode() {
         return Objects.hash(idSolicitud);
     }
 
-    /**
-     * Orden natural para TreeSet: primero por fecha de solicitud cronologica y luego por idSolicitud
-     */
     @Override
     public int compareTo(SolicitudAyuda o) {
         if (o == null) return 1;

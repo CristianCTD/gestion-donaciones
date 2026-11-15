@@ -5,15 +5,6 @@ import modelo.PrioridadEnum;
 import modelo.SolicitudAyuda;
 import servicio.GestorDonaciones;
 
-/**
- * Clase principal de consola e interfaz de usuario para el Sistema de Donaciones.
- * Implementa el menu con las 11 operaciones obligatorias y salida (0).
- * 
- * Asignatura: Estructuras de Datos - Unidad 3
- * IES: Universidad de Cartagena
- * Tutor: John Carlos Arrieta Arrieta
- * Estudiante: Cristian Torres
- */
 public class Main {
 
     private final GestorDonaciones gestor;
@@ -100,7 +91,6 @@ public class Main {
         System.out.println("=======================================================================");
     }
 
-    // 1. Registrar
     private void opcionRegistrarSolicitud() {
         System.out.println("--- [1] REGISTRAR NUEVA SOLICITUD DE AYUDA ---");
         System.out.print("Ingrese ID de la solicitud (ej. SOL-116): ");
@@ -155,7 +145,6 @@ public class Main {
         System.out.print("Detalle o descripcion de la solicitud: ");
         String desc = scanner.nextLine().trim();
 
-        // Asignar donante o crear uno
         System.out.println("Donantes disponibles:");
         for (Donante d : gestor.obtenerTodosLosDonantes()) {
             System.out.println(" - [" + d.getIdDonante() + "] " + d.getNombre());
@@ -177,7 +166,6 @@ public class Main {
         }
     }
 
-    // 2. Consultar todos (List)
     private void opcionConsultarTodas() {
         System.out.println("--- [2] CONSULTAR TODAS LAS SOLICITUDES (LIST / ARRAYLIST) ---");
         List<SolicitudAyuda> lista = gestor.getListaGeneral();
@@ -189,7 +177,6 @@ public class Main {
         }
     }
 
-    // 3. Buscar por identificador (Map)
     private void opcionBuscarPorIdentificador() {
         System.out.println("--- [3] BUSCAR SOLICITUD POR IDENTIFICADOR UNICO (MAP / HASHMAP) ---");
         System.out.print("Ingrese el ID a buscar (ej. SOL-101, SOL-115 o SOL-999): ");
@@ -212,7 +199,6 @@ public class Main {
         }
     }
 
-    // 4. Registrar o consultar datos unicos (Set)
     private void opcionRegistrarOConsultarDatosUnicos() {
         System.out.println("--- [4] CONTROL DE DATOS UNICOS MEDIANTE SET (LINKEDHASHSET) ---");
         System.out.println("Tipos de recursos y categorias unicas registradas actualmente:");
@@ -237,7 +223,6 @@ public class Main {
         }
     }
 
-    // 5. Mostrar informacion ordenada (TreeSet)
     private void opcionMostrarInformacionOrdenada() {
         System.out.println("--- [5] MOSTRAR SOLICITUDES ORDENADAS (TREESET - COMPARABLE) ---");
         System.out.println("Criterio de orden: Cronologico por fecha de solicitud y desempatado por idSolicitud.");
@@ -250,7 +235,6 @@ public class Main {
         }
     }
 
-    // 6. Agregar elemento para procesamiento prioritario
     private void opcionAgregarElementoParaProcesamientoPrioritario() {
         System.out.println("--- [6] AGREGAR SOLICITUD EXISTENTE A COLA PRIORITARIA ---");
         System.out.print("Ingrese ID de la solicitud: ");
@@ -264,7 +248,6 @@ public class Main {
         System.out.println("[Exito] Solicitud '" + id + "' encolada en PriorityQueue con prioridad " + sol.getPrioridad());
     }
 
-    // 7. Consultar proximo prioritario (peek)
     private void opcionConsultarProximoElementoPrioritario() {
         System.out.println("--- [7] CONSULTAR PROXIMA SOLICITUD PRIORITARIA (PRIORITYQUEUE.PEEK) ---");
         SolicitudAyuda proxima = gestor.consultarProximoPrioritario();
@@ -277,7 +260,6 @@ public class Main {
         }
     }
 
-    // 8. Procesar siguiente elemento prioritario (poll)
     private void opcionProcesarSiguienteElementoPrioritario() {
         System.out.println("--- [8] ATENDER / PROCESAR SIGUIENTE SOLICITUD PRIORITARIA (PRIORITYQUEUE.POLL) ---");
         SolicitudAyuda procesada = gestor.procesarSiguientePrioritario();
@@ -290,7 +272,6 @@ public class Main {
         }
     }
 
-    // 9. Modificar
     private void opcionModificar() {
         System.out.println("--- [9] MODIFICAR SOLICITUD (CONSISTENCIA ENTRE COLECCIONES) ---");
         System.out.print("Ingrese el ID de la solicitud a modificar: ");
@@ -327,7 +308,6 @@ public class Main {
         }
     }
 
-    // 10. Eliminar
     private void opcionEliminar() {
         System.out.println("--- [10] ELIMINAR SOLICITUD (SINCRONIZACION COMPLETA) ---");
         System.out.print("Ingrese ID de la solicitud a eliminar: ");
@@ -349,7 +329,6 @@ public class Main {
         }
     }
 
-    // 11. Mostrar informacion de las colecciones
     private void opcionMostrarInformacionDeLasColecciones() {
         System.out.println("--- [11] ESTADO Y RESUMEN METRICO DE LAS COLECCIONES ---");
         Map<String, Integer> metricas = gestor.obtenerMetricasColecciones();

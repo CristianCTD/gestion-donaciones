@@ -1,14 +1,5 @@
 package modelo;
 
-/**
- * Enumeracion que define los niveles de urgencia y atencion para las solicitudes de ayuda.
- * Asocia un valor numerico para facilitar comparaciones y ordenamiento en PriorityQueue.
- * 
- * Asignatura: Estructuras de Datos - Unidad 3
- * IES: Universidad de Cartagena
- * Tutor: John Carlos Arrieta Arrieta
- * Estudiante: Cristian Torres
- */
 public enum PrioridadEnum {
     URGENTE(1, "Urgente"),
     ALTA(2, "Alta"),
