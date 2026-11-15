@@ -4,7 +4,7 @@
 **Unidad:** Unidad 3 - Java Collections Framework  
 **Actividad:** Actividad 1 - Protocolo Individual / Colaborativo (30%)  
 **Programa:** Ingeniería de Software  
-**IES:** Universidad de Cartagena  
+**Universidad:** Universidad de Cartagena  
 **Tutor:** John Carlos Arrieta Arrieta  
 **Estudiante:** Cristian Torres  
 **Caso Asignado:** N.º 30 - Sistema de Gestión de Donaciones (`SolicitudAyuda` / `Donante`)
